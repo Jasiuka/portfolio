@@ -1,1 +1,29 @@
 /* Common styles for some elements which are used in many places */
+.btn-special,
+.btn-special--reverse {
+  padding: calc(var(--pd-small) - 0.2rem) var(--pd-small);
+}
+
+.btn-special {
+  background-color: var(--cl-main);
+  border: 2px solid transparent;
+  color: var(--text-cl-main);
+}
+
+.btn-special:hover {
+  background-color: var(--cl-secondary);
+  border: 2px solid var(--cl-main);
+  color: var(--cl-main);
+}
+
+.btn-special--reverse {
+  background-color: var(--cl-secondary);
+  border: 2px solid var(--cl-main);
+  color: var(--cl-main);
+}
+
+.btn-special--reverse:hover {
+  background-color: var(--cl-main);
+  border: 2px solid transparent;
+  color: var(--text-cl-main);
+}

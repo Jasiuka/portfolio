@@ -12,32 +12,48 @@
       <nav class="navigation">
         <a href="#">
           <img class="nav-logo" src="assets/my-logo-ed.svg" />
-          <ul class="nav-list">
-            <li class="nav-list__item">
-              <a href="#">About</a>
-              <a href="#">Timeline</a>
-              <a href="#">Skills</a>
-              <a href="#">Projects</a>
-              <a href="#">Contact me</a>
-            </li>
-          </ul>
         </a>
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <a href="#">About</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Timeline</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Skills</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Projects</a>
+          </li>
+          <li class="nav-list__item">
+            <a class="btn-special" href="#">Contact me</a>
+          </li>
+        </ul>
       </nav>
     </header>
     <main>
-      <section class="section">
+      <section class="section" id="hero">
         <div class="hero-content">
           <div class="hero-content__text">
-            <span>Hello</span>
-            <h1>I am Lukas Jasiukaitis,</h1>
-            <h2>a Web developer</h2>
+            <span class="uppercase hello">Hello</span>
+            <h1><span class="not-bold">I am</span> Lukas Jasiukaitis</h1>
+            <h2 class="uppercase not-bold">a Web developer</h2>
           </div>
           <div class="hero-content__buttons">
-            <button role="button" title="Download CV">CV</button>
-            <button role="button" title="Contact me">Contact me</button>
+            <button
+              role="button"
+              title="Download CV"
+              class="btn-special--reverse"
+            >
+              CV
+            </button>
+            <button role="button" title="Contact me" class="btn-special">
+              Contact me
+            </button>
           </div>
         </div>
-        <img src="assets/il_1.png" />
+        <img class="hero-illustration" src="assets/il_1.png" />
       </section>
       <section class="section">About me</section>
       <section class="section">Timeline</section>
