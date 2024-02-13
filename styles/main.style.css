@@ -1,0 +1,31 @@
+@import "components.style.css";
+@import "common.style.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
+:root {
+  --cl-main: #4dabf7;
+  --cl-secondary: #343a40;
+  --text-cl-main: #f8f9fa;
+}
+
+body {
+  background-color: var(--cl-secondary);
+  color: var(--text-cl-main);
+  font-family: Roboto, sans-serif;
+  max-width: 80rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}

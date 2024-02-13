@@ -1,0 +1,21 @@
+/* Styles for components like section, header, navigation etc. */
+
+/* HEADER */
+
+/* NAVIGATION */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.nav-logo {
+  width: 20%;
+  height: 20%;
+}
+
+/* HEADER */
+
+/* SECTIONS */
+
+/* HERO */
+
+/* SECTIONS */
