@@ -21,33 +21,35 @@
 .nav-list__item {
   font-size: var(--fs-text-small);
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
-.nav-list__item:not(:last-child) a {
-  padding: var(--pd-small);
-  overflow: hidden;
-  display: inline-block;
+.nav-list__item-link {
   position: relative;
-  border-radius: 0;
+  overflow-y: hidden;
 }
 
-.nav-list__item:not(:last-child) a:hover {
+.nav-list__item-link > span {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease 0.1s;
+  width: fit-content;
+  text-wrap: nowrap;
+}
+
+.nav-list__item-link span:last-child {
+  position: absolute;
+  transform: translateY(150%) translateX(-50%);
+  left: 50%;
+}
+
+.nav-list__item-link:hover span:last-child {
+  transform: translateY(0) translateX(-50%);
   color: var(--cl-main);
 }
 
-.nav-list__item:not(:last-child) a:hover::before {
-  width: 40%;
-  background-color: var(--cl-main);
-}
-
-.nav-list__item:not(:last-child) a::before {
-  content: "";
-  position: absolute;
-  top: 95%;
-  width: 0;
-  height: 2px;
-  background-color: transparent;
-  transition: all 0.4s ease;
+.nav-list__item-link:hover span:first-child {
+  transform: translateY(-150%);
 }
 
 /* HEADER */
@@ -64,8 +66,13 @@
   justify-content: space-between;
 }
 
+.hero-content {
+  animation: slideFromLeft 0.7s ease forwards;
+}
+
 .hero-illustration {
   max-width: 50%;
+  animation: slideFromRight 0.7s ease forwards;
 }
 
 .hero-content__text {
@@ -75,15 +82,16 @@
 }
 
 .hero-content__text h1 {
-  font-size: var(--fs-heading-small);
+  font-size: calc(var(--fs-heading-medium) - 0.4rem);
 }
 
-.hero-content__text h2 {
+.hero-content__text h4 {
   letter-spacing: 2px;
+  font-size: var(--fs-text-small);
 }
 
 .hero-content__buttons {
-  margin-top: var(--gap-large);
+  margin-top: calc(var(--gap-large) * 2);
   display: flex;
   align-items: center;
   gap: var(--gap-medium);
@@ -91,6 +99,7 @@
 
 .hello {
   position: relative;
+  font-size: calc(var(--fs-text-small) - 0.3rem);
 }
 .hello::before {
   display: inline-block;
@@ -102,6 +111,22 @@
   width: 20px;
   transform: translateY(-50%);
   background-color: var(--cl-light);
+}
+
+.btn-hero {
+  padding: var(--pd-small) calc(var(--pd-medium) - 0.2rem);
+  font-size: calc(var(--fs-text-small) - 0.4rem);
+}
+
+/* ABOUT ME */
+
+#about {
+  animation: showUp 2s ease forwards;
+}
+
+.about-me-text {
+  font-size: var(--fs-text-small);
+  line-height: 1.5;
 }
 
 /* SECTIONS */

@@ -1,6 +1,7 @@
 @import "components.style.css";
 @import "common.style.css";
 @import "helper.style.css";
+@import "animations.style.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
 :root {
   /* Colors */
@@ -9,6 +10,7 @@
   --text-cl-main: #f8f9fa;
   --cl-light: #f8f9fa;
   /* Font sizes */
+  --fs-text-smallest: clamp(1rem, 4vw, 1.2rem);
   --fs-text-small: clamp(1.2rem, 4vw, 1.6rem);
   --fs-text-medium: clamp(1.6rem, 4vw, 2.4rem);
   --fs-text-large: clamp(2.4rem, 4vw, 3rem);
@@ -35,6 +37,7 @@ body {
   font-family: Roboto, sans-serif;
   max-width: 80rem;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* #00002E #80ffd3 */

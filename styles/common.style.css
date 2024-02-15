@@ -1,8 +1,6 @@
 /* Common styles for some elements which are used in many places */
-.btn-special,
-.btn-special--reverse {
-  padding: calc(var(--pd-small) - 0.2rem) var(--pd-small);
-}
+
+/* SPECIAL BUTTON STYLE */
 
 .btn-special {
   background-color: var(--cl-main);
@@ -17,13 +15,62 @@
 }
 
 .btn-special--reverse {
-  background-color: var(--cl-secondary);
+  background-color: transparent;
+  border: 2px solid var(--cl-light);
+  color: var(--cl-light);
+}
+
+.btn-special--reverse:hover {
   border: 2px solid var(--cl-main);
   color: var(--cl-main);
 }
 
-.btn-special--reverse:hover {
+/* CV BUTTON */
+
+.btn-cv {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cv:hover::after {
+  transform: translateY(-150%) translateX(-50%);
+}
+
+.btn-cv:hover::before {
+  transform: translateY(0);
+}
+
+.btn-cv::after {
+  content: "CV";
+  position: absolute;
+  transform: translateY(0) translateX(-50%);
+  left: 50%;
+  transition: var(--transition);
+}
+
+.btn-cv::before {
+  content: "Download CV";
+  display: inline-block;
+  transform: translateY(150%);
+  transition: var(--transition);
+}
+
+/* SECTION HEADING */
+
+.section-heading {
+  font-size: var(--fs-heading-small);
+  position: relative;
+  display: inline-block;
+  padding-bottom: var(--pd-small);
+  margin-bottom: calc(var(--gap-large) * 3);
+}
+
+.section-heading::before {
+  content: "";
   background-color: var(--cl-main);
-  border: 2px solid transparent;
-  color: var(--text-cl-main);
+  height: 2px;
+  position: absolute;
+  top: 98%;
+  left: 0;
+  min-width: 50%;
 }
