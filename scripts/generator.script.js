@@ -23,9 +23,9 @@ function generateSkills(skillsWrapper) {
     newSkillWrapper.classList.add("skill-wrapper");
     newSkillWrapperInner.classList.add("skill-wrapper-inner");
     if (skill === "Ruby on Rails") {
-      newSkillElement.src = `/assets/skills/${splittedSkill[2].toLowerCase()}-icon.svg`;
+      newSkillElement.src = `./assets/skills/${splittedSkill[2].toLowerCase()}-icon.svg`;
     } else {
-      newSkillElement.src = `/assets/skills/${splittedSkill[0].toLowerCase()}-icon.svg`;
+      newSkillElement.src = `./assets/skills/${splittedSkill[0].toLowerCase()}-icon.svg`;
     }
     newSkillElement.classList.add("skill");
     displayText.textContent = skill;
