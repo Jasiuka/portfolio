@@ -15,7 +15,7 @@ emailjs.init("KbOBmySIBt9WDRfNy");
 generator(skillsWrapper);
 
 // LISTENERS
-// Body event listener using js bubbling instead of adding event listener for exact element
+// Body element event listener using js bubbling instead of adding event listener for exact element
 body.addEventListener("click", (e) => {
   const target = e.target;
 
@@ -23,11 +23,25 @@ body.addEventListener("click", (e) => {
     const notification = target.closest(".notification");
     const id = notification.dataset.el_id;
     removeNotificationWithClick(id);
-  } else {
-    return;
+  }
+
+  if (target.classList.contains("project-more")) {
+    const projectWrapper = target.closest(".project");
+    const projectBottom = projectWrapper.querySelector(".project-bottom");
+    const projectImage = projectWrapper.querySelector(".project-image");
+    const projectTopDetails = projectWrapper.querySelector(".project-details");
+    projectTopDetails.classList.toggle("project-details--full");
+    projectImage.classList.toggle("project-image--full");
+    projectBottom.classList.toggle("open");
+    if (target.textContent === "More") {
+      target.textContent = "Less";
+    } else {
+      target.textContent = "More";
+    }
   }
 });
 
+// Contact me form submit listener
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.target;
