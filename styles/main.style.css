@@ -1,7 +1,7 @@
+@import "animations.style.css";
 @import "components.style.css";
 @import "common.style.css";
 @import "helper.style.css";
-@import "animations.style.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
 :root {
   /* Colors */
@@ -9,6 +9,10 @@
   --cl-secondary: #343a40;
   --text-cl-main: #f8f9fa;
   --cl-light: #f8f9fa;
+  --cl-red: #fa5252;
+  --cl-light-red: #ff8787;
+  --cl-green: #40c057;
+  --cl-light-green: #69db7c;
   /* Font sizes */
   --fs-text-smallest: clamp(1rem, 4vw, 1.2rem);
   --fs-text-small: clamp(1.2rem, 4vw, 1.6rem);

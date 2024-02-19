@@ -1,45 +1,39 @@
 import { sendEmail } from "./emailSending.script.js";
+import { submitButtonChange, clearFormFields } from "./helper.script.js";
+import { removeNotificationWithClick } from "./notifications.script.js";
+import { generator } from "./generator.script.js";
 ("use strict");
 
-const skills = [
-  "JavaScript",
-  "React",
-  "Vue",
-  "Node",
-  "HTML",
-  "CSS",
-  "SQL",
-  "Ruby",
-  "Git",
-  "Ruby on Rails",
-];
+// ELEMENTS
 const form = document.querySelector(".contact-me__form");
-
+const body = document.querySelector(".body");
 const skillsWrapper = document.querySelector(".skills-wrapper");
-skills.forEach((skill) => {
-  const newSkillElement = document.createElement("img");
-  const newSkillWrapper = document.createElement("div");
-  const newSkillWrapperInner = document.createElement("div");
-  const display = document.createElement("span");
-  const displayText = document.createElement("p");
 
-  const splittedSkill = skill.split(" ");
-  newSkillWrapper.classList.add("skill-wrapper");
-  newSkillWrapperInner.classList.add("skill-wrapper-inner");
-  if (skill === "Ruby on Rails") {
-    newSkillElement.src = `/assets/skills/${splittedSkill[2].toLowerCase()}-icon.svg`;
-  } else {
-    newSkillElement.src = `/assets/skills/${splittedSkill[0].toLowerCase()}-icon.svg`;
-  }
-  newSkillElement.classList.add("skill");
-  displayText.textContent = skill;
-  display.appendChild(newSkillElement);
-  display.appendChild(displayText);
-  const copyOfDisplay = display.cloneNode(true);
-  newSkillWrapperInner.appendChild(display);
-  newSkillWrapperInner.appendChild(copyOfDisplay);
-  newSkillWrapper.appendChild(newSkillWrapperInner);
-  skillsWrapper.appendChild(newSkillWrapper);
-});
 emailjs.init("KbOBmySIBt9WDRfNy");
-form.addEventListener("submit", (e) => sendEmail(e));
+
+// GENERATORS
+generator(skillsWrapper);
+
+// LISTENERS
+// Body event listener using js bubbling instead of adding event listener for exact element
+body.addEventListener("click", (e) => {
+  const target = e.target;
+
+  if (target.classList.contains("notification-close")) {
+    const notification = target.closest(".notification");
+    const id = notification.dataset.el_id;
+    removeNotificationWithClick(id);
+  } else {
+    return;
+  }
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const submitButton = form.querySelector(".form-button");
+  submitButtonChange(submitButton);
+  const isSuccess = await sendEmail(form);
+  if (isSuccess) clearFormFields(form);
+  submitButtonChange(submitButton, true);
+});

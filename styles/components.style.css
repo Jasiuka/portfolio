@@ -54,6 +54,56 @@
 
 /* HEADER */
 
+/* NOTIFICATIONS */
+
+.notifications {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-small);
+  z-index: 100;
+}
+
+.notification {
+  display: flex;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  width: clamp(20rem, 20dvw, 30rem);
+  /* width: 30rem; */
+}
+
+.notification-close,
+.notification-text {
+  padding: var(--pd-small);
+  background-color: transparent;
+  color: var(--cl-text-main);
+}
+
+.notification-close {
+  border-radius: 0;
+}
+
+.notification.error .notification-close:hover {
+  background-color: var(--cl-light-red);
+}
+
+.notification.success .notification-close:hover {
+  background-color: var(--cl-light-green);
+}
+
+.error {
+  background-color: var(--cl-red);
+}
+
+.success {
+  background-color: var(--cl-green);
+}
+
+/* NOTIFICATIONS */
+
 /* SECTIONS */
 .section {
   padding: var(--pd-section-top-bot) 0;
@@ -312,6 +362,14 @@ textarea.form-input {
   padding: var(--pd-small) var(--pd-medium);
   min-width: 70%;
   font-size: var(--fs-text-smallest);
+}
+
+.form-button > span {
+  margin-left: var(--gap-small);
+}
+
+.form-button:disabled {
+  background-color: rgb(139, 139, 139);
 }
 
 /* SECTIONS */
