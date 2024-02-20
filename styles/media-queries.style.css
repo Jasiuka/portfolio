@@ -1,0 +1,26 @@
+@media only screen and (max-width: 62.5rem) {
+  #contact-me .section-content {
+    flex-direction: column;
+  }
+
+  #contact-me .box {
+    border-radius: 0 0 20px 20px;
+  }
+
+  .project-top__content {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 20%;
+    min-height: 20%;
+    flex-direction: row;
+  }
+
+  .project-image {
+    min-width: 100%;
+  }
+
+  .project-top__content--full {
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.555);
+  }
+}
