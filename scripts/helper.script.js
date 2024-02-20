@@ -18,3 +18,9 @@ export const clearFormFields = (form) => {
   const inputs = form.querySelectorAll(".form-input");
   inputs.forEach((input) => (input.value = ""));
 };
+
+// Toggle mobile menu and navigation
+export const togglesMobileMenuAndNavigation = (mobileMenu, navigation) => {
+  mobileMenu.classList.toggle("mobile-menu--open");
+  navigation.classList.toggle("navigation--open");
+};

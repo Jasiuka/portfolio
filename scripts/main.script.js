@@ -1,5 +1,9 @@
 import { sendEmail } from "./emailSending.script.js";
-import { submitButtonChange, clearFormFields } from "./helper.script.js";
+import {
+  submitButtonChange,
+  clearFormFields,
+  togglesMobileMenuAndNavigation,
+} from "./helper.script.js";
 import { removeNotificationWithClick } from "./notifications.script.js";
 import { generator } from "./generator.script.js";
 ("use strict");
@@ -7,6 +11,8 @@ import { generator } from "./generator.script.js";
 // ELEMENTS
 const form = document.querySelector(".contact-me__form");
 const body = document.querySelector(".body");
+const mobileMenu = document.querySelector(".mobile-menu");
+const navigation = document.querySelector(".navigation");
 const skillsWrapper = document.querySelector(".skills-wrapper");
 const projectsWrapper = document.querySelector(".projects-wrapper");
 const footer = document.querySelector(".footer");
@@ -46,6 +52,13 @@ body.addEventListener("click", (e) => {
       target.title = "More about project";
     }
   }
+
+  if (
+    target.closest(".nav-list__item-link") &&
+    navigation.classList.contains("navigation--open")
+  ) {
+    togglesMobileMenuAndNavigation(mobileMenu, navigation);
+  }
 });
 
 // Contact me form submit event listener
@@ -58,3 +71,9 @@ form.addEventListener("submit", async (e) => {
   if (isSuccess) clearFormFields(form);
   submitButtonChange(submitButton, true);
 });
+
+// Mobile menu click hanlder
+
+mobileMenu.addEventListener("click", () =>
+  togglesMobileMenuAndNavigation(mobileMenu, navigation)
+);

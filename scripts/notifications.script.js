@@ -32,6 +32,10 @@ export function removeNotificationWithClick(notificationId) {
   notificationsList.removeChild(
     document.querySelector(`.notification[data-el_id='${notificationId}']`)
   );
+  if (!notificationsList.childNodes.length) {
+    clearInterval(removeInterval);
+    removeInterval = null;
+  }
 }
 
 // Generates notification element
