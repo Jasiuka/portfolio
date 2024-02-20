@@ -8,7 +8,7 @@ export const skills = [
   "SQL",
   "Ruby",
   "Git",
-  "Ruby on Rails",
+  "Rails",
 ];
 
 export const projects = [

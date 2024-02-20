@@ -13,17 +13,13 @@ function generateSkills(skillsWrapper) {
     const display = document.createElement("span");
     const displayText = document.createElement("p");
 
-    const splittedSkill = skill.split(" ");
     // add required classes
     newSkillWrapper.classList.add("skill-wrapper");
     newSkillWrapperInner.classList.add("skill-wrapper-inner");
     newSkillElement.classList.add("skill");
     // add content / attributes
-    if (skill === "Ruby on Rails") {
-      newSkillElement.src = `./assets/skills/${splittedSkill[2].toLowerCase()}-icon.svg`;
-    } else {
-      newSkillElement.src = `./assets/skills/${splittedSkill[0].toLowerCase()}-icon.svg`;
-    }
+    newSkillElement.src = `./assets/skills/${skill.toLowerCase()}-icon.svg`;
+    newSkillElement.alt = skill + " logo image";
     displayText.textContent = skill;
     // Append elements
     display.append(newSkillElement, displayText);
