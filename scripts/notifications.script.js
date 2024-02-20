@@ -17,6 +17,7 @@ export function createNotification(params) {
   }
 }
 
+// Removes first notification
 function removeNotification() {
   notificationsList.removeChild(notificationsList.firstElementChild);
 
@@ -26,12 +27,14 @@ function removeNotification() {
   }
 }
 
+// removes notification when close button clicked
 export function removeNotificationWithClick(notificationId) {
   notificationsList.removeChild(
     document.querySelector(`.notification[data-el_id='${notificationId}']`)
   );
 }
 
+// Generates notification element
 function createNotificationElement(text, type) {
   // Create required elements for notification
   const newNotificationElement = document.createElement("li");

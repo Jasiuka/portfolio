@@ -42,6 +42,7 @@ body {
   font-family: Roboto, sans-serif;
   max-width: 80rem;
   margin: 0 auto;
+  /* padding: 0 clamp(0rem, 5dvw, 25rem); */
   overflow-x: hidden;
   font-size: var(--fs-text-smallest);
 }
@@ -60,6 +61,12 @@ a {
   cursor: pointer;
   transition: var(--transition);
   border-radius: var(--border-radius);
+}
+
+button:disabled,
+.disabled {
+  background-color: rgb(139, 139, 139);
+  pointer-events: none;
 }
 
 ul,

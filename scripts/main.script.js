@@ -8,11 +8,14 @@ import { generator } from "./generator.script.js";
 const form = document.querySelector(".contact-me__form");
 const body = document.querySelector(".body");
 const skillsWrapper = document.querySelector(".skills-wrapper");
+const projectsWrapper = document.querySelector(".projects-wrapper");
+const footer = document.querySelector(".footer");
 
+// OTHER
 emailjs.init("KbOBmySIBt9WDRfNy");
 
 // GENERATORS
-generator(skillsWrapper);
+generator(skillsWrapper, projectsWrapper, footer);
 
 // LISTENERS
 // Body element event listener using js bubbling instead of adding event listener for exact element
@@ -41,7 +44,7 @@ body.addEventListener("click", (e) => {
   }
 });
 
-// Contact me form submit listener
+// Contact me form submit event listener
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.target;

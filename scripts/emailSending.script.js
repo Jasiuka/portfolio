@@ -10,6 +10,7 @@ export const sendEmail = async function (form) {
     message,
   };
 
+  // Validation
   const isNameValid = validator("name", user_name, 15, "name");
   if (!isNameValid) return;
   const isEmailValid = validator("email", email, 60, "email");

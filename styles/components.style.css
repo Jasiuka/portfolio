@@ -256,6 +256,12 @@
 
 /* PROJECTS */
 
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-large);
+}
+
 .project {
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -281,7 +287,13 @@
   padding: var(--pd-small) var(--pd-medium);
   transition: all 0.5s ease;
   min-width: 22%;
+  max-width: 22%;
   min-height: 100%;
+}
+
+.project-title {
+  text-align: center;
+  text-wrap: balance;
 }
 
 .project-image {
@@ -292,6 +304,12 @@
   object-position: top;
   filter: brightness(0.9);
   transition: all 0.5s ease;
+}
+
+.project-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-small);
 }
 
 .project-button {
@@ -449,3 +467,11 @@ textarea.form-input {
 }
 
 /* SECTIONS */
+
+/* FOOTER */
+.footer {
+  margin-top: calc(var(--gap-large) * 3);
+  min-width: 100dvw;
+  padding: var(--pd-large);
+  border-top: 2px solid var(--cl-main);
+}
