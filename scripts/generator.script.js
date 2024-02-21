@@ -257,7 +257,7 @@ function generateButtons(
       if (buttonElement.disabled) {
         buttonElement.classList.add("button-disabled");
       }
-      buttonElement.target = "_blank";
+      if (button.content != "More") buttonElement.target = "_blank";
     }
     buttonElement.title = button.title;
     buttonElement.textContent = button.content;
