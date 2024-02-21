@@ -139,7 +139,7 @@ function generateProjectHeader(imageSrc, projectTitle, projectId) {
   imageElement.alt = `${projectTitle} project image`;
   imageElement.role = "img";
   imageElement.classList.add("project-image");
-  buttonReturn.href = "/";
+  buttonReturn.href = "index.html";
   buttonReturn.textContent = "Return to main";
   buttonReturn.classList.add("btn-special");
   // Append
