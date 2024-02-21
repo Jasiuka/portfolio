@@ -5,7 +5,7 @@ import {
   togglesMobileMenuAndNavigation,
 } from "./helper.script.js";
 import { removeNotificationWithClick } from "./notifications.script.js";
-import { generator } from "./generator.script.js";
+import { mainPagegenerator } from "./generator.script.js";
 ("use strict");
 
 // ELEMENTS
@@ -14,14 +14,14 @@ const body = document.querySelector(".body");
 const mobileMenu = document.querySelector(".mobile-menu");
 const navigation = document.querySelector(".navigation");
 const skillsWrapper = document.querySelector(".skills-wrapper");
-const projectsWrapper = document.querySelector(".projects-wrapper");
+const projectsWrapper = document.querySelector(".projects-content");
 const footer = document.querySelector(".footer");
 
 // OTHER
 emailjs.init("KbOBmySIBt9WDRfNy");
 
 // GENERATORS
-generator(skillsWrapper, projectsWrapper, footer);
+mainPagegenerator(skillsWrapper, projectsWrapper, footer);
 
 // LISTENERS
 // Body element event listener using js bubbling instead of adding event listener for exact element

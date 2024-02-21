@@ -14,7 +14,7 @@
 
     <title>Lu;Jas -- Portfolio</title>
   </head>
-  <body class="body">
+  <body class="body" id="main-page">
     <ul class="notifications"></ul>
     <header class="header">
       <button class="mobile-menu">
@@ -63,7 +63,7 @@
           <div class="hero-content__text">
             <span class="uppercase hello">Hello</span>
             <h1><span class="not-bold">I am</span> Lukas Jasiukaitis</h1>
-            <h4 class="uppercase not-bold">a Web developer</h4>
+            <p class="uppercase not-bold">a Web developer</p>
           </div>
           <div class="hero-content__buttons">
             <a
@@ -73,13 +73,14 @@
               href="/assets/files/CV_EN.pdf"
               download="Lukas Jasiukaitis CV"
             ></a>
-            <button
+            <a
               role="button"
               title="Contact me"
               class="btn-special btn-hero"
+              href="#contact-me"
             >
               Contact me
-            </button>
+            </a>
           </div>
         </div>
         <img
@@ -116,11 +117,8 @@
       </section>
       <section class="section" id="projects">
         <h2 class="section-heading">Projects</h2>
-        <div class="section-content projects-content">
-          <div class="projects-wrapper"></div>
-        </div>
+        <div class="section-content projects-content"></div>
       </section>
-
       <section class="section" id="contact-me">
         <h2 class="section-heading">Contact me</h2>
         <div class="section-content">

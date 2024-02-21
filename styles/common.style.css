@@ -68,7 +68,7 @@
 .section-heading::before {
   content: "";
   background-color: var(--cl-main);
-  height: 2px;
+  height: 4px;
   position: absolute;
   top: 98%;
   left: 0;
@@ -93,3 +93,5 @@
   max-width: 7rem;
   max-height: 7rem;
 }
+
+/* PROJECT STYLES */

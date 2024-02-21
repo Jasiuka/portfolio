@@ -9,3 +9,14 @@
 .not-bold {
   font-weight: 400;
 }
+
+.text-main-color {
+  color: var(--cl-main-light);
+}
+
+.button-disabled {
+  background-color: grey;
+  text-decoration: line-through;
+  pointer-events: none;
+  border: none;
+}
