@@ -82,13 +82,8 @@
   }
 
   /* PROJECTS */
-
-  #projects > h2 {
-    margin-bottom: calc(var(--gap-large) * 6);
-  }
-
   .projects-content {
-    gap: calc(var(--gap-large) * 5);
+    gap: calc(var(--gap-large) * 3);
   }
 
   .project {
@@ -99,8 +94,7 @@
 
   .project-title__wrapper {
     display: flex;
-    position: absolute;
-    top: -4rem;
+    position: relative;
     min-width: 100%;
   }
 

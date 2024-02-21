@@ -15,7 +15,7 @@
 }
 
 .button-disabled {
-  background-color: grey;
+  background-color: rgb(96, 96, 96);
   text-decoration: line-through;
   pointer-events: none;
   border: none;

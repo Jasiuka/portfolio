@@ -83,9 +83,9 @@ function generateProjectsInMain(projectsWrapper) {
     projectTitleWrapper.appendChild(projectTitle);
 
     projectElement.append(
-      projectTitleWrapper,
       projectButtons,
-      projectImageElement
+      projectImageElement,
+      projectTitleWrapper
     );
     projectsWrapper.appendChild(projectElement);
   });

@@ -146,7 +146,6 @@
 }
 
 .hero-content {
-  animation: slideFromLeft 0.7s ease forwards;
 }
 
 .hero-illustration {
@@ -162,11 +161,13 @@
 
 .hero-content__text h1 {
   font-size: calc(var(--fs-text-largest));
+  animation: slideFromLeft 0.7s ease forwards;
 }
 
 .hero-content__text p {
   letter-spacing: 2px;
   font-size: var(--fs-text-small);
+  animation: slideFromLeft 1s ease forwards;
 }
 
 .hero-content__buttons {
@@ -174,11 +175,13 @@
   display: flex;
   align-items: center;
   gap: var(--gap-medium);
+  animation: slideFromLeft 1.2s ease forwards;
 }
 
 .hello {
   position: relative;
   font-size: calc(var(--fs-text-small) - 0.3rem);
+  animation: slideFromLeft 0.7s ease forwards;
 }
 .hello::before {
   display: inline-block;
