@@ -585,8 +585,11 @@ textarea.form-input {
 }
 
 #project-page .btn-special {
-  margin-top: var(--gap-large);
   padding: var(--pd-small);
+}
+
+#project-page main:not(.no-project) .btn-special {
+  margin-top: var(--gap-large);
   align-self: baseline;
 }
 
@@ -596,4 +599,11 @@ textarea.form-input {
 
 #project-page .project-buttons__wrapper-inner {
   transform: none;
+}
+
+#project-page .no-project {
+  min-height: 80dvh;
+  gap: var(--gap-small);
+  align-items: center;
+  justify-content: center;
 }

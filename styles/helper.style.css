@@ -20,3 +20,11 @@
   pointer-events: none;
   border: none;
 }
+
+.flex-grow {
+  flex: 1 0 auto;
+}
+
+.flex-not-shrink {
+  flex-shrink: 0;
+}

@@ -6,6 +6,7 @@
   background-color: var(--cl-main);
   border: 2px solid transparent;
   color: var(--text-cl-main);
+  text-align: center;
 }
 
 .btn-special:not(:disabled):hover {

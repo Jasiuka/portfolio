@@ -117,6 +117,16 @@ function generateProjectTitle(projectTitle, projectId, titleTag) {
 ///////////////////// GENERATORS FOR PROJECT PAGE ///////////////////////
 function generateProject(projectId, body, footer) {
   const foundProject = projects.find((project) => project.id == projectId);
+  // Generate message and title when project with such id does not exist
+  if (!foundProject) {
+    // Change document title
+    document.title = "The project does not exist";
+    const content = generateWhenNoProjectExist(projectId);
+    body.insertBefore(content, footer);
+    return;
+  }
+  // change document title if project exist
+  document.title = foundProject.title;
 
   const header = generateProjectHeader(
     foundProject.image,
@@ -216,6 +226,25 @@ function generateProjectMainContentWrappers(
   // Appending
   wrapper.append(heading, contentEl);
   return wrapper;
+}
+
+function generateWhenNoProjectExist(projectId) {
+  // Wrapper
+  const contentWrapper = document.createElement("main");
+  contentWrapper.classList.add("no-project");
+  // Title
+  const displayText = document.createElement("h1");
+  displayText.textContent = `Project with id ${projectId} does not exist`;
+  // Return button
+  const returnButton = document.createElement("a");
+  returnButton.textContent = "Return to main";
+  returnButton.href = "index.html";
+  returnButton.title = "Return to main page";
+  returnButton.classList.add("btn-special");
+  returnButton.role = "button";
+
+  contentWrapper.append(displayText, returnButton);
+  return contentWrapper;
 }
 
 ///////////////////// GENERATORS FOR BOTH PAGES ///////////////////////
