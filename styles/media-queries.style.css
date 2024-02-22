@@ -98,6 +98,7 @@
     display: flex;
     position: relative;
     min-width: 100%;
+    transition: all 0.6s ease;
   }
 
   .project-buttons__wrapper {
@@ -105,11 +106,13 @@
     min-width: unset;
     display: flex;
     align-items: center;
+    transition: all 0.6s ease;
   }
 
   #main-page .project-image {
     min-width: unset;
     max-width: 100%;
+    transition: filter 0.3s ease, transform 0.6s ease;
   }
 
   /* HERO */

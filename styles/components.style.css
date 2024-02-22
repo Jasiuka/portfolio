@@ -78,9 +78,6 @@
   transform: translateY(4rem);
 }
 
-.mobile-menu > span:nth-of-type(2) {
-}
-
 /* HEADER */
 
 /* NOTIFICATIONS */
@@ -101,7 +98,6 @@
   border-radius: var(--border-radius);
   overflow: hidden;
   width: clamp(20rem, 20dvw, 30rem);
-  /* width: 30rem; */
 }
 
 .notification-close,
