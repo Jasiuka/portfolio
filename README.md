@@ -26,11 +26,11 @@ Old portfolio link for comparison: [Old portfolio](https://jasiuka.github.io/Luk
 - HTML5
 - CSS
 
-## 💻 Website design preview in desktops
+## 💻 Website design preview
 
 ![Website design | Main page](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnBjZDB6aTdsNjFneHZnNGppczZ5eDJhNDVsd3p2aTlheTVrZjBxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zBHQrACmkaZBakQhvS/giphy.gif)
 
-## :iphone Website design preview in phones
+## 📱 Website design preview
 
 ![Website design | Main page](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWExd21xaG8wbHFnYmNmc3B6NXhkcHZhOGMxZ2gwbnZvbTFsNTFrcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wrRpia4s1Tu6b3KWJw/giphy.gif)
 
