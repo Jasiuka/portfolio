@@ -145,11 +145,8 @@
   justify-content: space-between;
 }
 
-.hero-content {
-}
-
 .hero-illustration {
-  max-width: clamp(40%, 35dvw, 45%);
+  max-width: clamp(5rem, 30dvw, 35rem);
   animation: slideFromRight 0.7s ease forwards;
 }
 
@@ -160,13 +157,13 @@
 }
 
 .hero-content__text h1 {
-  font-size: calc(var(--fs-text-largest));
+  font-size: clamp(var(--fs-text-medium), 7dvw, var(--fs-text-largest));
   animation: slideFromLeft 0.7s ease forwards;
 }
 
 .hero-content__text p {
   letter-spacing: 2px;
-  font-size: var(--fs-text-small);
+  font-size: clamp(var(--fs-text-smallest), 3dvw, var(--fs-text-small));
   animation: slideFromLeft 1s ease forwards;
 }
 
@@ -306,6 +303,8 @@
   position: absolute;
   top: 30%;
   min-width: 100%;
+  z-index: 5;
+  transition: all 1s ease;
 }
 
 .project-title {
@@ -323,6 +322,7 @@
   min-width: 100%;
   display: flex;
   align-items: center;
+  transition: all 1s ease;
 }
 
 .project-buttons__wrapper-inner {
@@ -350,7 +350,7 @@
   position: relative;
   max-width: clamp(30rem, 60dvw, 50rem);
   border-radius: var(--border-radius);
-  transition: var(--transition);
+  transition: filter 0.3s ease, transform 1s ease;
   filter: brightness(0.7);
   -webkit-filter: brightness(0.7);
 }
@@ -392,6 +392,33 @@
 
 .project:hover > .project-buttons__wrapper > .project-buttons__wrapper-inner {
   transform: translateX(0);
+}
+
+/* For observer */
+
+.project:nth-child(even) .project-title__wrapper,
+.project:nth-child(even) .project-buttons__wrapper {
+  transform: translateX(80rem);
+  opacity: 0;
+}
+.project:nth-child(odd) .project-title__wrapper,
+.project:nth-child(odd) .project-buttons__wrapper {
+  transform: translateX(-80rem);
+  opacity: 0;
+}
+
+.project:nth-child(even) .project-image {
+  transform: translateX(-80rem);
+}
+.project:nth-child(odd) .project-image {
+  transform: translateX(80rem);
+}
+
+.project.visible .project-title__wrapper,
+.project.visible .project-buttons__wrapper,
+.project.visible .project-image {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* CONTACT ME */

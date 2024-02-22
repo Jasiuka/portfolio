@@ -6,6 +6,7 @@ import {
 } from "./helper.script.js";
 import { removeNotificationWithClick } from "./notifications.script.js";
 import { mainPagegenerator } from "./generator.script.js";
+import { observe } from "./observer.script.js";
 ("use strict");
 
 // ELEMENTS
@@ -22,6 +23,10 @@ emailjs.init("KbOBmySIBt9WDRfNy");
 
 // GENERATORS
 mainPagegenerator(skillsWrapper, projectsWrapper, footer);
+
+// Observer
+const projects = document.querySelectorAll(".project");
+observe(projects);
 
 // LISTENERS
 // Body element event listener using js bubbling instead of adding event listener for exact element

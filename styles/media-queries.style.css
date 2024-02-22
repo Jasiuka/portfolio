@@ -109,6 +109,16 @@
     min-width: unset;
     max-width: 100%;
   }
+
+  /* HERO */
+  #hero {
+    flex-direction: column-reverse;
+    align-items: baseline;
+  }
+
+  .hero-illustration {
+    align-self: center;
+  }
 }
 
 /* 450px */

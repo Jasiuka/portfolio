@@ -47,6 +47,7 @@ function generateSkills(skillsWrapper) {
     // add content / attributes
     newSkillElement.src = `./assets/skills/${skill.toLowerCase()}-icon.svg`;
     newSkillElement.alt = skill + " logo image";
+    newSkillElement.loading = "lazy";
     displayText.textContent = skill;
     // Append elements
     display.append(newSkillElement, displayText);
@@ -78,6 +79,7 @@ function generateProjectsInMain(projectsWrapper) {
     // Adding content / attributes
     projectImageElement.src = project.image;
     projectImageElement.alt = `${project.title} project image`;
+    projectImageElement.loading = "lazy";
 
     // Appending elements
     projectTitleWrapper.appendChild(projectTitle);
@@ -148,6 +150,7 @@ function generateProjectHeader(imageSrc, projectTitle, projectId) {
   imageElement.src = imageSrc;
   imageElement.alt = `${projectTitle} project image`;
   imageElement.role = "img";
+  imageElement.loading = "lazy";
   imageElement.classList.add("project-image");
   buttonReturn.href = "index.html";
   buttonReturn.textContent = "Return to main";
