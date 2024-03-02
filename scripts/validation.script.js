@@ -37,5 +37,26 @@ export function validator(inputName, inputValue, length, pattern) {
     return;
   }
 
+  // If input value empty
+  if (inputValue.trim().length < 1) {
+    createNotification({
+      text: `Input field ${inputName} should not be empty!`,
+      type: "error",
+    });
+    return;
+  }
+
   return isValid;
+}
+
+export function recaptchaValidation(recaptcha) {
+  if (!recaptcha) {
+    createNotification({
+      text: `Confirm that you're not a robot with recaptcha`,
+      type: "error",
+    });
+    return;
+  }
+
+  return true;
 }

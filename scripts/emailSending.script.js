@@ -1,6 +1,6 @@
 import { createNotification } from "./notifications.script.js";
-import { validator } from "./validation.script.js";
-export const sendEmail = async function (form) {
+import { recaptchaValidation, validator } from "./validation.script.js";
+export const sendEmail = async function (form, recaptcha) {
   const user_name = form.user_name.value;
   const email = form.email.value;
   const message = form.message.value;
@@ -8,6 +8,7 @@ export const sendEmail = async function (form) {
     user_name,
     email,
     message,
+    "g-recaptcha-response": recaptcha,
   };
 
   // Validation
@@ -17,6 +18,8 @@ export const sendEmail = async function (form) {
   if (!isEmailValid) return;
   const isMessageValid = validator("message", message, 300);
   if (!isMessageValid) return;
+  const isRecaptchaExist = recaptchaValidation(recaptcha);
+  if (!isRecaptchaExist) return;
 
   const response = await emailjs.send(
     "service_4545aik",

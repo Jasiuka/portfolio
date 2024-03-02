@@ -23,6 +23,7 @@
       onload="this.media='all'"
     />
     <script defer src="./scripts/main.script.js" type="module"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link
       rel="icon"
       type="image/png"
@@ -206,6 +207,10 @@
               ></textarea>
               <label for="message" class="form-label">Message</label>
             </div>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LcgVocpAAAAAPF_RkLa5YOZ-A3TrbQVKuNROpSL"
+            ></div>
             <button type="submit" role="button" class="btn-special form-button">
               Send
             </button>

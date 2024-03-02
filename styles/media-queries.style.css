@@ -134,4 +134,8 @@
     max-width: 80%;
     align-items: unset;
   }
+
+  .skills-wrapper {
+    grid-template-rows: repeat(5, 1fr);
+  }
 }

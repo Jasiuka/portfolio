@@ -20,7 +20,6 @@ const footer = document.querySelector(".footer");
 
 // OTHER
 emailjs.init("KbOBmySIBt9WDRfNy");
-
 // GENERATORS
 mainPagegenerator(skillsWrapper, projectsWrapper, footer);
 
@@ -69,10 +68,11 @@ body.addEventListener("click", (e) => {
 // Contact me form submit event listener
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  const recaptcha = grecaptcha.getResponse();
   const form = e.target;
   const submitButton = form.querySelector(".form-button");
   submitButtonChange(submitButton);
-  const isSuccess = await sendEmail(form);
+  const isSuccess = await sendEmail(form, recaptcha);
   if (isSuccess) clearFormFields(form);
   submitButtonChange(submitButton, true);
 });
