@@ -13,7 +13,7 @@ export function createNotification(params) {
   if (!removeInterval) {
     removeInterval = setInterval(() => {
       removeNotification();
-    }, 2000);
+    }, 3000);
   }
 }
 
