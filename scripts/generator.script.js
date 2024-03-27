@@ -66,7 +66,7 @@ function generateProjectsInMain(projectsWrapper) {
     const projectTitle = generateProjectTitle(project.title, project.id, "h3");
     const projectButtons = generateButtons(
       buttons,
-      project.id,
+      { id: project.id, title: project.title },
       project.live,
       project.code
     );
@@ -261,13 +261,14 @@ function generateFooterText(footer) {
 
 function generateButtons(
   buttonsArray,
-  projectId,
+  projectData,
   projectLive = "",
   projectCode = "",
   isMoreAdded = true
 ) {
   const buttonsWrapper = document.createElement("div");
   const buttonsWrapperInner = document.createElement("div");
+  console.log(projectData);
   buttonsArray.forEach((button) => {
     if (!isMoreAdded && button.content === "More") return;
     const buttonElement = document.createElement(button.type);
@@ -276,12 +277,15 @@ function generateButtons(
       switch (button.content) {
         case "Code":
           buttonElement.href = projectCode;
+          buttonElement.title = `View ${projectData.title} project code`;
           break;
         case "Live":
           buttonElement.href = projectLive;
+          buttonElement.title = `Go to ${projectData.title} project live version`;
           break;
         case "More":
-          buttonElement.href = `./project.html?project=${projectId}`;
+          buttonElement.href = `./project.html?project=${projectData.id}`;
+          buttonElement.title = `More about ${projectData.title} project`;
           break;
       }
       const doesHrefExist = buttonElement.getAttribute("href");
@@ -291,7 +295,9 @@ function generateButtons(
       }
       if (button.content != "More") buttonElement.target = "_blank";
     }
-    buttonElement.title = button.title;
+    buttonElement.title = buttonElement.title
+      ? buttonElement.title
+      : button.title;
     buttonElement.textContent = button.content;
     buttonElement.classList.add(button.classes[0]);
     buttonsWrapperInner.appendChild(buttonElement);
