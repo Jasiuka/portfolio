@@ -1,5 +1,6 @@
 export const skills = [
   "JavaScript",
+  "TypeScript",
   "React",
   "Vue",
   "Node",
@@ -8,7 +9,6 @@ export const skills = [
   "SQL",
   "Ruby",
   "Git",
-  "Rails",
 ];
 
 export const projects = [
